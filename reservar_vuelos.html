@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerolínea</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Logo y Menú de Navegación -->
+    <nav class="blue darken-3">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo"><img src="img/logo_1.png" alt="Logo" style="height: 70px;"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservar_vuelos.html">Reservar Vuelos</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Imagen de Fondo -->
+    <div class="header-image"></div>
+
+    <!-- Buscador de Vuelos -->
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-title">Reservar vuelos</h2>
+                <form id="flight-search-form">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="origin" type="text" class="validate" required>
+                            <label for="origin">Origen</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="destination" type="text" class="validate" required>
+                            <label for="destination">Destino</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="departure-date" type="text" class="datepicker" required>
+                            <label for="departure-date">Fecha de Salida</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="return-date" type="text" class="datepicker" required>
+                            <label for="return-date">Fecha de Regreso</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="passengers" type="number" class="validate" min="1" max="10" required>
+                            <label for="passengers">Número de Pasajeros</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select id="class" required>
+                                <option value="" disabled selected>Seleccionar Clase</option>
+                                <option value="economy">Económica</option>
+                                <option value="business">Business</option>
+                                <option value="first">Primera Clase</option>
+                            </select>
+                            <label for="class">Clase</label>
+                        </div>
+                    </div>
+                    <button id="submit-btn" class="btn waves-effect waves-light blue darken-3" type="button">Reservar Vuelo</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Resultados de Búsqueda -->
+        <div id="flight-results" style="display: none;">
+            <h5>Resultados de Búsqueda:</h5>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Vuelo a Ciudad A</span>
+                            <p>Fecha de Salida: <span id="result-departure"></span></p>
+                            <p>Fecha de Regreso: <span id="result-return"></span></p>
+                            <p>Clase: <span id="result-class"></span></p>
+                            <p>Pasajeros: <span id="result-passengers"></span></p>
+                            <button class="btn waves-effect waves-light blue darken-3 print-btn" type="button">Imprimir Certificado</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Vuelo a Ciudad B</span>
+                            <p>Fecha de Salida: <span id="result-departure-2"></span></p>
+                            <p>Fecha de Regreso: <span id="result-return-2"></span></p>
+                            <p>Clase: <span id="result-class-2"></span></p>
+                            <p>Pasajeros: <span id="result-passengers-2"></span></p>
+                            <button class="btn waves-effect waves-light blue darken-3 print-btn" type="button">Imprimir Certificado</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Archivos JavaScript -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Script para manejar la reserva de vuelos
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('flight-search-form');
+            var resultsDiv = document.getElementById('flight-results');
+            var submitBtn = document.getElementById('submit-btn');
+
+            submitBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Aquí deberías agregar lógica para procesar y reservar el vuelo
+                // Ejemplo de simulación de reserva:
+                var origin = document.getElementById('origin').value;
+                var destination = document.getElementById('destination').value;
+                var departureDate = document.getElementById('departure-date').value;
+                var returnDate = document.getElementById('return-date').value;
+                var passengers = document.getElementById('passengers').value;
+                var flightClass = document.getElementById('class').value;
+
+                // Simulación de reserva exitosa (puedes ajustarlo según tu backend)
+                var flightResults = document.getElementById('flight-results');
+                flightResults.style.display = 'block';
+
+                // Mostrar resultados simulados
+                document.getElementById('result-departure').textContent = departureDate;
+                document.getElementById('result-return').textContent = returnDate;
+                document.getElementById('result-class').textContent = flightClass;
+                document.getElementById('result-passengers').textContent = passengers;
+
+                // Mostrar mensaje de reserva exitosa (simulado)
+                M.toast({html: '¡Vuelo reservado correctamente!', classes: 'blue darken-3'});
+
+                // Manejar la impresión del certificado (simulado)
+                var printButtons = document.querySelectorAll('.print-btn');
+                printButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        window.print();
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

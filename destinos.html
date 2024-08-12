@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .destinations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .destination-card {
+            width: 300px;
+            border: 1px solid #140000;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .destination-card-content {
+            padding: 15px;
+            text-align: center;
+            color: #140000;
+        }
+
+        .destination-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .destination-card p {
+            margin: 5px 0;
+        }
+
+        .destination-card-action {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .destination-card-action a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .destination-card-action a:hover {
+            text-decoration: underline;
+        }
+        body {
+            background: url('img/fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Menú de Navegación -->
+    <nav class="blue darken-3">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo"><img src="img/logo_1.png" alt="Logo" style="height: 70px;"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservar_vuelos.html">Reservar Vuelos</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de Destinos -->
+    <div class="container">
+        <h2 class="center-align">Destinos Populares</h2>
+        <div class="destinations-grid">
+            <!-- Destino 1: París -->
+            <div class="destination-card">
+                <img src="img/paris.jpg" alt="París">
+                <div class="destination-card-content">
+                    <h3 class="destination-card-title">París</h3>
+                    <p>Desde <strong>$1000 USD</strong></p>
+                    <p>Clase: Primera, Business, Económica</p>
+                    <p>Descuento: 10% en vuelos de ida y vuelta</p>
+                </div>
+                <div class="destination-card-action">
+                    <a href="#">Ver Más</a>
+                </div>
+            </div>
+
+            <!-- Destino 2: Tokio -->
+            <div class="destination-card">
+                <img src="img/tokyo.jpg" alt="Tokio">
+                <div class="destination-card-content">
+                    <h3 class="destination-card-title">Tokio</h3>
+                    <p>Desde <strong>$1200 USD</strong></p>
+                    <p>Clase: Primera, Business, Económica</p>
+                    <p>Descuento: 15% en vuelos nocturnos</p>
+                </div>
+                <div class="destination-card-action">
+                    <a href="#">Ver Más</a>
+                </div>
+            </div>
+
+            <!-- Destino 3: Roma -->
+            <div class="destination-card">
+                <img src="img/rome.jpg" alt="Roma">
+                <div class="destination-card-content">
+                    <h3 class="destination-card-title">Roma</h3>
+                    <p>Desde <strong>$900 USD</strong></p>
+                    <p>Clase: Business, Económica</p>
+                    <p>Descuento: 20% en reservas anticipadas</p>
+                </div>
+                <div class="destination-card-action">
+                    <a href="#">Ver Más</a>
+                </div>
+            </div>
+
+            <!-- Destino 4: Nueva York -->
+            <div class="destination-card">
+                <img src="img/ny.jpg" alt="Nueva York">
+                <div class="destination-card-content">
+                    <h3 class="destination-card-title">Nueva York</h3>
+                    <p>Desde <strong>$850 USD</strong></p>
+                    <p>Clase: Primera, Business</p>
+                    <p>Descuento: 10% en paquetes de hotel y vuelo</p>
+                </div>
+                <div class="destination-card-action">
+                    <a href="#">Ver Más</a>
+                </div>
+            </div>
+
+            <!-- Destino 5: Sídney -->
+            <div class="destination-card">
+                <img src="img/sydney.jpg" alt="Sídney">
+                <div class="destination-card-content">
+                    <h3 class="destination-card-title">Sídney</h3>
+                    <p>Desde <strong>$1100 USD</strong></p>
+                    <p>Clase: Económica, Business</p>
+                    <p>Descuento: 5% en vuelos de ida y vuelta</p>
+                </div>
+                <div class="destination-card-action">
+                    <a href="#">Ver Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Archivos JavaScript -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
